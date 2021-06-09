@@ -8,7 +8,7 @@ export default function FooterNavigation({ isStatic }) {
   return (
     <Nav isStatic={isStatic}>
       <NavBox>
-        <NavLinkStyled activeClassName="active" exact to="/" className="link">
+        <NavLinkStyled exact to="/" className="link">
           <img src={formicon} alt="formicon" />
         </NavLinkStyled>
         <NavLinkStyled
@@ -56,9 +56,5 @@ const NavLinkStyled = styled(NavLink)`
   color: transparent;
   :hover {
     background: var(--secondary);
-  }
-
-  .active {
-    opacity: 0.5;
   }
 `;
