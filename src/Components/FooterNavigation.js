@@ -8,17 +8,17 @@ export default function FooterNavigation({ isStatic }) {
   return (
     <Nav isStatic={isStatic}>
       <NavBox>
-        <NavLinkStyled exact to="/" className="link">
+        <NavLinkStyled exact to="/" activeClassName="active" className="link">
           <img src={formicon} alt="formicon" />
         </NavLinkStyled>
         <NavLinkStyled
-          activeClassName="active"
           to="/location-list"
+          activeClassName="active"
           className="link"
         >
           <img src={listicon} alt="listicon" />
         </NavLinkStyled>
-        <NavLinkStyled activeClassName="active" to="/map" className="link">
+        <NavLinkStyled to="/map" activeClassName="active" className="link">
           <img src={mapicon} alt="mapicon" />
         </NavLinkStyled>
       </NavBox>
@@ -42,6 +42,10 @@ const NavBox = styled.div`
   border-radius: 0.375rem;
   color: transparent;
   height: 2.75rem;
+
+  .active {
+    opacity: 0.9;
+  }
 `;
 
 const NavLinkStyled = styled(NavLink)`
@@ -52,9 +56,15 @@ const NavLinkStyled = styled(NavLink)`
   padding: 12px 14px 10px 14px;
   text-decoration: none;
   background: transparent;
-
   color: transparent;
+  opacity: 0.5;
+
   :hover {
     background: var(--secondary);
+  }
+
+  img:hover {
+    background: var(--secondary);
+    border-radius: 3rem;
   }
 `;
