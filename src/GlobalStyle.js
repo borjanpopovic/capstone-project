@@ -33,6 +33,7 @@ export default createGlobalStyle`
      box-sizing: border-box;
      background: var(--primary);
      font-family: var(--ff-sans);
+     text-align: center;
    }
 
    h1, h2, h3 {
