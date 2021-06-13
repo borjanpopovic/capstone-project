@@ -35,7 +35,7 @@ import taxi from '../assets/map-pins/taxi.png';
 import wc from '../assets/map-pins/wc.png';
 import validateLocation from '../lib/Validation';
 
-export default function LocationForm({ onAddLocation }) {
+export default function LocationForm({ onAddLocations }) {
   const initialLocation = {
     name: '',
     category: '',
@@ -46,6 +46,7 @@ export default function LocationForm({ onAddLocation }) {
 
   const [location, setLocation] = useState(initialLocation);
   const [isError, setIsError] = useState(false);
+  //console.log('aktuelle Location', location);
 
   function updateLocation(event) {
     const fieldName = event.target.name;
@@ -57,7 +58,7 @@ export default function LocationForm({ onAddLocation }) {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (validateLocation(location)) {
-      onAddLocation(location);
+      onAddLocations(location);
       setLocation(initialLocation);
       setIsError(false);
     } else {
@@ -70,48 +71,129 @@ export default function LocationForm({ onAddLocation }) {
     <Form onSubmit={handleFormSubmit}>
       {isError ? <ErrorBox>Please check your entries</ErrorBox> : null}
       <label htmlFor="locationName">location name</label>
-      <input onChange={updateLocation} type="text" name="name" />
+      <input
+        onChange={updateLocation}
+        type="text"
+        name="name"
+        value={location.name}
+      />
       <label htmlFor="category">category</label>
-      <input onChange={updateLocation} type="text" name="category" />
-      <select name="map-pin" id="map-pin">
-        <option value="">---map pin---</option>
-        <option value="airport">
-          <img src={airport} alt="airport" />
-        </option>
-      </select>
+      <input
+        onChange={updateLocation}
+        type="text"
+        name="category"
+        value={location.category}
+      />
+      <div className="dropdown">
+        <button className="dropbtn">Choose a pin</button>
+        <div className="dropdown-content">
+          <a href="#">
+            <img src={airport} alt="airport-pin" width="30" height="30" />
+          </a>
+          <a href="#">
+            <img src={bank} alt="airport-pin" width="30" height="30" />
+          </a>
+          <a href="#">
+            <img src={bar} alt="airport-pin" width="30" height="30" />
+          </a>
+        </div>
+      </div>
       <label htmlFor="currentPosition">currentPosition</label>
-      <input onChange={updateLocation} type="text" name="currentPosition" />
+      <input
+        onChange={updateLocation}
+        type="text"
+        name="currentPosition"
+        value={location.position}
+      />
       <label htmlFor="adress">adress</label>
-      <input onChange={updateLocation} type="text" name="adress" />
-      <button>Add to list/map</button>
+      <input
+        onChange={updateLocation}
+        type="text"
+        name="adress"
+        value={location.adress}
+      />
+      <Button>Add to list/map</Button>
     </Form>
   );
 }
 
 const Form = styled.form`
   display: grid;
-  gap: 0.5rem;
+  gap: 0.8rem;
   margin: 0 auto;
-  max-width: 25rem;
+  //max-width: 28rem;
   //border: 1px solid var(--secondary);
   border-radius: 1rem;
-  box-shadow: 0 2px 0.75rem hsla(213, 52%, 20%, 0.2);
+  box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
 
   place-items: center;
   gap: 0.5rem;
   padding: 1rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin: 1rem;
   text-align: center;
+  .dropbtn {
+    //background-color: #4caf50;
+    //color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 1.25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    //padding: 0.375rem 0.5rem;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: var(--secondary);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: var(--secondary);
+  }
 `;
 
 const ErrorBox = styled.div`
-  background: darkred;
+  background: hsl(340, 60%, 50%);
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+  color: hsl(340, 95%, 95%);
+  font-size: 0.5rem;
+  margin: 0;
+`;
+
+const Button = styled.button`
   padding: 1rem;
-  border-radius: 0.5rem;
-  color: white;
-  font-weight: bold;
-  font-family: sans-serif;
-  text-align: center;
-  box-shadow: 1px 1px 2px black;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+
+  :hover {
+    background-color: var(--secondary);
+  }
 `;

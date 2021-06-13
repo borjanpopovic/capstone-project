@@ -47,6 +47,8 @@ export default createGlobalStyle`
    body {
      line-height: 1.5;
      font-size: 1.25rem; /* var(--fs-400) */
+     margin: 0;
+     padding:0;
    }
 
    ul[class],

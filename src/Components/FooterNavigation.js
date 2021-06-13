@@ -28,6 +28,7 @@ export default function FooterNavigation({ isStatic }) {
 
 const Nav = styled.nav`
   position: ${(props) => (props.isStatic ? 'static' : 'fixed')};
+  background: transparent;
   bottom: 0;
   padding: 1.25rem;
   width: 100%;

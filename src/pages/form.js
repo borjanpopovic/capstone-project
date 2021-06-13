@@ -2,27 +2,20 @@ import styled from 'styled-components';
 import '../App';
 import LocationForm from '../Components/LocationForm';
 
-
-export default function Form() {
-
-const [locations, setLocations] = useState([]);
-
-  function addLocations(location) {
-  setLocations([...locations, location]);
-
+export default function Form({ onAddLocations }) {
   return (
     <>
       <H1>Add a location</H1>
       <FormWrapper>
-        <LocationForm onAddLocation={addLocations}/>
+        <LocationForm onAddLocations={onAddLocations} />
       </FormWrapper>
     </>
   );
 }
 
-const FormWrapper = styled.form`
+const FormWrapper = styled.div`
   display: inline-block;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
   width: 80vw; ;
