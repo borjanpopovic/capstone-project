@@ -46,7 +46,7 @@ export default function LocationForm({ onAddLocations }) {
 
   const [location, setLocation] = useState(initialLocation);
   const [isError, setIsError] = useState(false);
-  //console.log('aktuelle Location', location);
+  //console.log('added location', location);
 
   function updateLocation(event) {
     const fieldName = event.target.name;
@@ -87,14 +87,179 @@ export default function LocationForm({ onAddLocations }) {
       <div className="dropdown">
         <button className="dropbtn">Choose a pin</button>
         <div className="dropdown-content">
-          <a href="#">
-            <img src={airport} alt="airport-pin" width="30" height="30" />
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'airport' })}
+          >
+            <img src={airport} alt="airport pin" width="30" height="30" />
           </a>
-          <a href="#">
-            <img src={bank} alt="airport-pin" width="30" height="30" />
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'bank' })}
+          >
+            <img src={bank} alt="bank pin" width="30" height="30" />
           </a>
-          <a href="#">
-            <img src={bar} alt="airport-pin" width="30" height="30" />
+          <a href="#" onClick={() => setLocation({ ...location, icon: 'bar' })}>
+            <img src={bar} alt="bar pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'bookmark' })}
+          >
+            <img src={bookmark} alt="bar pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'burger' })}
+          >
+            <img src={burger} alt="bar pin" width="30" height="30" />
+          </a>
+          <a href="#" onClick={() => setLocation({ ...location, icon: 'bus' })}>
+            <img src={bus} alt="bus pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'camera' })}
+          >
+            <img src={camera} alt="camera pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'cinema' })}
+          >
+            <img src={cinema} alt="cinema pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'clothes' })}
+          >
+            <img src={clothes} alt="clothes pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'coffee' })}
+          >
+            <img src={coffee} alt="coffee pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'drink' })}
+          >
+            <img src={drink} alt="drink pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'earth' })}
+          >
+            <img src={earth} alt="earth pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'gasoline' })}
+          >
+            <img src={gasoline} alt="gasoline pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'government' })}
+          >
+            <img src={government} alt="government pin" width="30" height="30" />
+          </a>
+          <a href="#" onClick={() => setLocation({ ...location, icon: 'gym' })}>
+            <img src={gym} alt="gym pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'heart' })}
+          >
+            <img src={heart} alt="heart pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'home' })}
+          >
+            <img src={home} alt="home pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'hospital' })}
+          >
+            <img src={hospital} alt="hospital pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'house' })}
+          >
+            <img src={house} alt="house pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'image' })}
+          >
+            <img src={image} alt="image pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'info' })}
+          >
+            <img src={info} alt="info pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'lethal' })}
+          >
+            <img src={lethal} alt="lethal pin" width="30" height="30" />
+          </a>
+          <a href="#" onClick={() => setLocation({ ...location, icon: 'med' })}>
+            <img src={med} alt="med pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'office' })}
+          >
+            <img src={office} alt="office pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'parking' })}
+          >
+            <img src={parking} alt="parking pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'picnic' })}
+          >
+            <img src={picnic} alt="picnic pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'save' })}
+          >
+            <img src={save} alt="save pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'ship' })}
+          >
+            <img src={ship} alt="ship pin" width="30" height="30" />
+          </a>
+          <a href="#" onClick={() => setLocation({ ...location, icon: 'spa' })}>
+            <img src={spa} alt="spa pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'star' })}
+          >
+            <img src={star} alt="star pin" width="30" height="30" />
+          </a>
+          <a
+            href="#"
+            onClick={() => setLocation({ ...location, icon: 'taxi' })}
+          >
+            <img src={taxi} alt="taxi pin" width="30" height="30" />
+          </a>
+          <a href="#" onClick={() => setLocation({ ...location, icon: 'wc' })}>
+            <img src={wc} alt="wc pin" width="30" height="30" />
           </a>
         </div>
       </div>
