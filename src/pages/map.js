@@ -5,9 +5,9 @@ import '../App';
 export default function Map() {
   return (
     <>
-      <h1>Your map</h1>
+      <H1>Your map</H1>
       <MapWrapper id="mapid">
-        <MapContainer center={[53.55, 9.98]} zoom={2} scrollWheelZoom={false}>
+        <MapContainer center={[53.55, 9.98]} zoom={4} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -23,11 +23,20 @@ export default function Map() {
   );
 }
 
+const H1 = styled.h1`
+  color: var(--border-dark);
+  font-size: 1.25rem;
+  margin-top: 5rem;
+  padding-top: 1rem;
+  text-align: center;
+`;
+
 const MapWrapper = styled.div`
   .leaflet-container {
-    height: 50rem;
-    margin-top: 10rem;
-    width: 90vw;
+    bottom: 0;
+    height: 33.2rem;
+    margin-top: 1rem;
+    width: 100%;
     z-index: 0;
   }
 

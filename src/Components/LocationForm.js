@@ -63,7 +63,7 @@ export default function LocationForm({ onAddLocations }) {
       setIsError(false);
     } else {
       setIsError(true);
-      setTimeout(() => setIsError(false), 2000);
+      setTimeout(() => setIsError(false), 3000);
     }
   }
 
@@ -314,7 +314,8 @@ const Form = styled.form`
   //border: 1px solid var(--secondary);
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-
+  color: var(--border-dark);
+  font-size: 1rem;
   place-items: center;
   gap: 0.5rem;
   padding: 1rem;
@@ -322,10 +323,8 @@ const Form = styled.form`
   margin: 1rem;
   text-align: center;
   .dropbtn {
-    //background-color: #4caf50;
-    //color: white;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 0.5rem;
+    font-size: 0.5rem;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
@@ -371,7 +370,7 @@ const Form = styled.form`
 `;
 
 const ErrorBox = styled.div`
-  background: hsl(340, 60%, 50%);
+  background: var(--red);
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   color: hsl(340, 95%, 95%);
@@ -382,11 +381,13 @@ const ErrorBox = styled.div`
 const Button = styled.button`
   padding: 1rem;
   font-size: 1rem;
+  background-color: var(--secondary);
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
 
   :hover {
     background-color: var(--secondary);
+    color: var(--primary);
   }
 `;

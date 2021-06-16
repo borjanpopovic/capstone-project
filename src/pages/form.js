@@ -15,17 +15,24 @@ export default function Form({ onAddLocations }) {
 
 const FormWrapper = styled.div`
   display: inline-block;
-  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
   width: 80vw; ;
 `;
 
-const H1 = styled.h1`
+/* const H1 = styled.h1`
   font-size: 1.25rem;
   margin-top: 5rem;
   margin-bottom: 1rem;
   color: var(--border);
   text-align: center;
   padding-top: 2rem;
+`; */
+const H1 = styled.h1`
+  color: var(--border-dark);
+  font-size: 1.25rem;
+  margin-top: 5rem;
+  padding-top: 1rem;
+  text-align: center;
 `;

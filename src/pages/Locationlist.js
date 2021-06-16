@@ -19,7 +19,7 @@ const LocationCards = styled.div`
   margin-top: 5rem;
 `;
 
-const H1 = styled.h1`
+/* const H1 = styled.h1`
   font-size: 1.25rem;
   margin-top: 5rem;
   margin-bottom: 1rem;
@@ -27,4 +27,12 @@ const H1 = styled.h1`
   text-align: center;
   padding-top: 2rem;
   z-index: 100;
+`; */
+const H1 = styled.h1`
+  font-size: 1.25rem;
+  margin-top: 5rem;
+
+  color: var(--border-dark);
+  text-align: center;
+  padding-top: 1rem;
 `;

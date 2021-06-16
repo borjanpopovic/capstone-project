@@ -35,32 +35,37 @@ const Nav = styled.nav`
 `;
 
 const NavBox = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: space-evenly;
   background: transparent;
-  //background-color: var(--primary);
   border-radius: 0.375rem;
   color: transparent;
+  display: flex;
   height: 2.75rem;
+  justify-content: space-evenly;
+  //background-color: var(--primary);
   z-index: 1000;
   .active {
+    background: var(--secondary);
     opacity: 0.9;
+  }
+
+  img .active {
+    background: var(--secondary);
   }
 `;
 
 const NavLinkStyled = styled(NavLink)`
-  display: inline-flex;
   //border: 0.031rem solid var(--border-dark);
-  background: var(--primary);
+
+  background: transparent;
   box-shadow: 0 2px 0.75rem hsla(213, 52%, 20%, 0.2);
   border-radius: 3rem;
   border: 0.3rem solid var(--red);
+  color: transparent;
+  display: inline-flex;
+  opacity: 0.5;
   padding: 12px 14px 10px 14px;
   text-decoration: none;
-  background: transparent;
-  color: transparent;
-  opacity: 0.5;
 
   :hover {
     background: var(--secondary);
