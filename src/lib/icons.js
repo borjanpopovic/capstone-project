@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import airport from '../assets/map-pins/airport.png';
 import bank from '../assets/map-pins/bank.png';
 import bar from '../assets/map-pins/bar.png';
@@ -31,42 +30,41 @@ import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
 import wc from '../assets/map-pins/wc.png';
-import validateLocation from '../lib/Validation';
-import mapPin from '../lib/icons';
-export default function LocationCard({ location }) {
-  /* function mapPin(location) {
-    switch (location.icon) {
-      case 'airport':
-        return { airport };
-      case 'bank':
-        return { bank };
-      case 'bar':
-        return { bar };
-      case 'bookmark':
-        return { bookmark };
-      default:
-        return '';
-    }
-  } */
 
-  return (
-    <Card>
-      <h2>{location.name}</h2>
-      <p>{location.category}</p>
-      <p>{mapPin(location)}</p>
-      <p>{location.position}</p>
-      <p>{location.adress}</p>
-    </Card>
-  );
+export default function mapPin(location) {
+  const icons = {
+    airport: airport,
+    bar: bar,
+    bank: bank,
+    bookmark: bookmark,
+    burger: burger,
+    bus: bus,
+    camera: camera,
+    cinema: cinema,
+    clothes: clothes,
+    coffee: coffee,
+    drink: drink,
+    earth: earth,
+    gasoline: gasoline,
+    government: government,
+    gym: gym,
+    heart: heart,
+    home: home,
+    hospital: hospital,
+    house: house,
+    image: image,
+    info: info,
+    lethal: lethal,
+    med: med,
+    office: office,
+    parking: parking,
+    picnic: picnic,
+    save: save,
+    ship: ship,
+    spa: spa,
+    star: star,
+    taxi: taxi,
+    wc: wc,
+  };
+  return icons[location.icon];
 }
-
-const Card = styled.article`
-  border-radius: 1rem;
-  box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-
-  padding: 1rem 1rem;
-  height: 10rem;
-  //min-width: calc((100% - 2rem) / 4);
-
-  font-family: sans-serif;
-`;

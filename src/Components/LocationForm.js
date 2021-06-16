@@ -34,7 +34,7 @@ import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
 import wc from '../assets/map-pins/wc.png';
 import validateLocation from '../lib/Validation';
-
+import mapPin from '../lib/icons';
 export default function LocationForm({ onAddLocations }) {
   const initialLocation = {
     name: '',
@@ -67,6 +67,26 @@ export default function LocationForm({ onAddLocations }) {
     }
   }
 
+  /* function mapPin(location) {
+    const icons = {
+      airport: airport,
+      bar: bar,
+      bank: bank,
+    };
+    return icons[location.icon]; */
+  // switch (location.icon) {
+  //   case 'airport':
+  //     return airport;
+  //   case 'bank':
+  //     return bank;
+  //   case 'bar':
+  //     return bar;
+  //   case 'bookmark':
+  //     return bookmark;
+  //   default:
+  //     return '';
+  // }
+
   return (
     <Form onSubmit={handleFormSubmit}>
       {isError ? <ErrorBox>Please check your entries</ErrorBox> : null}
@@ -84,8 +104,12 @@ export default function LocationForm({ onAddLocations }) {
         name="category"
         value={location.category}
       />
+      <span>
+        <img src={mapPin(location)} alt="map pin"></img>
+      </span>
       <div className="dropdown">
-        <button className="dropbtn">Choose a pin</button>
+        <label htmlFor="icon">Choose a pin</label>
+        <select className="dropbtn">Choose a pin</select>
         <div className="dropdown-content">
           <a
             href="#"
@@ -309,7 +333,7 @@ const Form = styled.form`
 
   .dropdown {
     position: relative;
-    display: inline-block;
+    //display: inline-block;
   }
 
   .dropdown-content {
@@ -317,7 +341,7 @@ const Form = styled.form`
 
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 1.25rem;
+    min-width: 3rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
@@ -326,7 +350,8 @@ const Form = styled.form`
     color: black;
     //padding: 0.375rem 0.5rem;
     text-decoration: none;
-    display: block;
+    //display: block;
+    width: 9vw;
   }
 
   .dropdown-content a:hover {
@@ -334,7 +359,10 @@ const Form = styled.form`
   }
 
   .dropdown:hover .dropdown-content {
-    display: block;
+    //display: block;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
   }
 
   .dropdown:hover .dropbtn {
