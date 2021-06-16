@@ -15,6 +15,7 @@ export default createGlobalStyle`
      --secondary-dark:  ;
      --white: #ecf8f8;
      --black: #211103;
+     --red: 	hsl(355, 78%, 56%);
 
      --ff-sans: "Open sans", sans-serif;
      --ff-serif: serif;

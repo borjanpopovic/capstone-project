@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+/* import 'leaflet/dist/leaflet.css'; */
 import styled from 'styled-components';
 import '../App';
 export default function Map() {
@@ -6,16 +7,12 @@ export default function Map() {
     <>
       <h1>Your map</h1>
       <MapWrapper id="mapid">
-        <MapContainer
-          center={[51.505, -0.09]}
-          zoom={13}
-          scrollWheelZoom={false}
-        >
+        <MapContainer center={[53.55, 9.98]} zoom={2} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[51.505, -0.09]}>
+          <Marker position={[53.55, 9.98]}>
             <Popup>
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
@@ -27,5 +24,16 @@ export default function Map() {
 }
 
 const MapWrapper = styled.div`
-  height: 11.25rem;
+  .leaflet-container {
+    height: 50rem;
+    margin-top: 10rem;
+    width: 90vw;
+    z-index: 0;
+  }
+
+  .img {
+    background: transparent;
+  }
 `;
+
+/* 53.54541316002105, 9.985753997521998; */
