@@ -68,6 +68,6 @@ const NavLinkStyled = styled(NavLink)`
 
   img:hover {
     background: var(--secondary);
-    border-radius: 3rem;
+    /* border-radius: 3rem; */
   }
 `;

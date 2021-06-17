@@ -39,11 +39,70 @@ export default function LocationCard({ location }) {
       case 'airport':
         return <img src={airport} alt="airport pin" width="30" height="30" />;
       case 'bank':
-        return bank;
+        return <img src={bank} alt="bank pin" width="30" height="30" />;
       case 'bar':
-        return bar;
+        return <img src={bar} alt="bar pin" width="30" height="30" />;
       case 'bookmark':
-        return bookmark;
+        return <img src={bookmark} alt="bar pin" width="30" height="30" />;
+      case 'burger':
+        return <img src={burger} alt="bar pin" width="30" height="30" />;
+      case 'bus':
+        return <img src={bus} alt="bus pin" width="30" height="30" />;
+      case 'camera':
+        return <img src={camera} alt="camera pin" width="30" height="30" />;
+      case 'cinema':
+        return <img src={cinema} alt="cinema pin" width="30" height="30" />;
+      case 'clothes':
+        return <img src={clothes} alt="clothes pin" width="30" height="30" />;
+      case 'coffee':
+        return <img src={coffee} alt="coffee pin" width="30" height="30" />;
+      case 'drink':
+        return <img src={drink} alt="drink pin" width="30" height="30" />;
+      case 'earth':
+        return <img src={earth} alt="earth pin" width="30" height="30" />;
+      case 'gasoline':
+        return <img src={gasoline} alt="gasoline pin" width="30" height="30" />;
+      case 'government':
+        return (
+          <img src={government} alt="government pin" width="30" height="30" />
+        );
+      case 'gym':
+        return <img src={gym} alt="gym pin" width="30" height="30" />;
+      case 'heart':
+        return <img src={heart} alt="heart pin" width="30" height="30" />;
+      case 'home':
+        return <img src={home} alt="home pin" width="30" height="30" />;
+      case 'hospital':
+        return <img src={hospital} alt="hospital pin" width="30" height="30" />;
+      case 'house':
+        return <img src={house} alt="house pin" width="30" height="30" />;
+      case 'image':
+        return <img src={image} alt="foto pin" width="30" height="30" />;
+      case 'info':
+        return <img src={info} alt="info pin" width="30" height="30" />;
+      case 'lethal':
+        return <img src={lethal} alt="lethal pin" width="30" height="30" />;
+      case 'med':
+        return <img src={med} alt="med pin" width="30" height="30" />;
+      case 'office':
+        return <img src={office} alt="office pin" width="30" height="30" />;
+      case 'parking':
+        return <img src={parking} alt="parking pin" width="30" height="30" />;
+      case 'picnic':
+        return <img src={picnic} alt="picnic pin" width="30" height="30" />;
+      case 'save':
+        return <img src={save} alt="save pin" width="30" height="30" />;
+      case 'ship':
+        return <img src={ship} alt="ship pin" width="30" height="30" />;
+      case 'spa':
+        return <img src={spa} alt="spa pin" width="30" height="30" />;
+      case 'star':
+        return <img src={star} alt="star pin" width="30" height="30" />;
+      case 'taxi':
+        return <img src={taxi} alt="taxi pin" width="30" height="30" />;
+      case 'wc':
+        return <img src={wc} alt="wc pin" width="30" height="30" />;
+
       default:
         return '';
     }
