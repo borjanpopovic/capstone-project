@@ -7,7 +7,7 @@ export default function Map() {
     <>
       <H1>Your map</H1>
       <MapWrapper id="mapid">
-        <MapContainer center={[53.55, 9.98]} zoom={4} scrollWheelZoom={false}>
+        <MapContainer center={[53.55, 9.98]} zoom={5} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

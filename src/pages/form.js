@@ -17,7 +17,7 @@ const FormWrapper = styled.div`
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1rem;
+  margin-top: 0;
   width: 80vw; ;
 `;
 

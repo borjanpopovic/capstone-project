@@ -104,19 +104,16 @@ export default function LocationForm({ onAddLocations }) {
         name="category"
         value={location.category}
       />
-      <span>
+      {location.icon === '' ? null : (
         <img src={mapPin(location)} alt="map pin"></img>
-      </span>
+      )}
       <div className="dropdown">
         <label htmlFor="icon">Choose a pin</label>
         <select className="dropbtn">Choose a pin</select>
         <div className="dropdown-content">
-          <a
-            href="#"
-            onClick={() => setLocation({ ...location, icon: 'airport' })}
-          >
+          <button onClick={() => setLocation({ ...location, icon: 'airport' })}>
             <img src={airport} alt="airport pin" width="30" height="30" />
-          </a>
+          </button>
           <a
             href="#"
             onClick={() => setLocation({ ...location, icon: 'bank' })}
@@ -287,6 +284,7 @@ export default function LocationForm({ onAddLocations }) {
           </a>
         </div>
       </div>
+
       <label htmlFor="currentPosition">currentPosition</label>
       <input
         onChange={updateLocation}
@@ -312,6 +310,7 @@ const Form = styled.form`
   margin: 0 auto;
   //max-width: 28rem;
   //border: 1px solid var(--secondary);
+  background: var(--primary);
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   color: var(--border-dark);
@@ -337,15 +336,16 @@ const Form = styled.form`
 
   .dropdown-content {
     display: none;
-
+    background-color: transparent;
     position: absolute;
-    background-color: #f9f9f9;
+    //background-color: #f9f9f9;
     min-width: 3rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
 
   .dropdown-content a {
+    background-color: transparent;
     color: black;
     //padding: 0.375rem 0.5rem;
     text-decoration: none;
@@ -353,12 +353,15 @@ const Form = styled.form`
     width: 9vw;
   }
 
-  .dropdown-content a:hover {
+  /* .dropdown-content a:hover {
     background-color: var(--secondary);
-  }
+  } */
 
   .dropdown:hover .dropdown-content {
     //display: block;
+    background-color: transparent;
+    background: blur(6px);
+
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);

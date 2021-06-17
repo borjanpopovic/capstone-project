@@ -34,20 +34,20 @@ import wc from '../assets/map-pins/wc.png';
 import validateLocation from '../lib/Validation';
 import mapPin from '../lib/icons';
 export default function LocationCard({ location }) {
-  /* function mapPin(location) {
+  function mapPin(location) {
     switch (location.icon) {
       case 'airport':
-        return { airport };
+        return <img src={airport} alt="airport pin" width="30" height="30" />;
       case 'bank':
-        return { bank };
+        return bank;
       case 'bar':
-        return { bar };
+        return bar;
       case 'bookmark':
-        return { bookmark };
+        return bookmark;
       default:
         return '';
     }
-  } */
+  }
 
   return (
     <Card>
@@ -61,12 +61,11 @@ export default function LocationCard({ location }) {
 }
 
 const Card = styled.article`
+  background-color: var(--primary);
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-
-  padding: 1rem 1rem;
-  height: 10rem;
-  //min-width: calc((100% - 2rem) / 4);
-
   font-family: sans-serif;
+  height: 10rem;
+  padding: 1rem 1rem;
+  //min-width: calc((100% - 2rem) / 4);
 `;

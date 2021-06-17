@@ -32,7 +32,7 @@ export default createGlobalStyle`
    *::before,
    *::after {
      box-sizing: border-box;
-     background: var(--primary);
+     //ackground: var(--primary);
      font-family: var(--ff-sans);
      text-align: center;
    }
