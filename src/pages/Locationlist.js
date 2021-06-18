@@ -1,12 +1,38 @@
 import styled from 'styled-components';
 import '../App';
-export default function Locationlist() {
+import LocationCard from '../Components/LocationCard';
+export default function Locationlist({ locations }) {
   return (
     <>
-      <h1>Your location list</h1>
-      <CardWrapper></CardWrapper>
+      <H1>Your location list</H1>
+      <LocationCards>
+        {locations.map((location, index) => (
+          <LocationCard key={index + location} location={location} />
+        ))}
+      </LocationCards>
     </>
   );
 }
 
-const CardWrapper = styled.div``;
+const LocationCards = styled.div`
+  padding: 1rem;
+  margin-top: 5rem;
+`;
+
+/* const H1 = styled.h1`
+  font-size: 1.25rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  color: var(--border);
+  text-align: center;
+  padding-top: 2rem;
+  z-index: 100;
+`; */
+const H1 = styled.h1`
+  font-size: 1.25rem;
+  margin-top: 5rem;
+
+  color: var(--border-dark);
+  text-align: center;
+  padding-top: 1rem;
+`;

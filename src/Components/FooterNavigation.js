@@ -28,43 +28,46 @@ export default function FooterNavigation({ isStatic }) {
 
 const Nav = styled.nav`
   position: ${(props) => (props.isStatic ? 'static' : 'fixed')};
+  background: transparent;
   bottom: 0;
   padding: 1.25rem;
   width: 100%;
-  z-index: 100;
 `;
 
 const NavBox = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: var(--primary);
+  background: transparent;
   border-radius: 0.375rem;
   color: transparent;
+  display: flex;
   height: 2.75rem;
-
+  justify-content: space-evenly;
+  z-index: 1000;
   .active {
+    background: var(--secondary);
     opacity: 0.9;
   }
 `;
 
 const NavLinkStyled = styled(NavLink)`
-  display: inline-flex;
   //border: 0.031rem solid var(--border-dark);
-  box-shadow: 0 2px 0.75rem hsla(213, 52%, 20%, 0.2);
+
+  background: transparent;
+  box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   border-radius: 3rem;
+  border: 0.15rem solid var(--red);
+  color: transparent;
+  display: inline-flex;
+  opacity: 0.5;
   padding: 12px 14px 10px 14px;
   text-decoration: none;
-  background: transparent;
-  color: transparent;
-  opacity: 0.5;
 
-  :hover {
+  /* :hover {
     background: var(--secondary);
-  }
+  } */
 
   img:hover {
     background: var(--secondary);
-    border-radius: 3rem;
+    /* border-radius: 3rem; */
   }
 `;

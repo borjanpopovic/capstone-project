@@ -15,6 +15,7 @@ export default createGlobalStyle`
      --secondary-dark:  ;
      --white: #ecf8f8;
      --black: #211103;
+     --red: 	hsl(355, 78%, 56%);
 
      --ff-sans: "Open sans", sans-serif;
      --ff-serif: serif;
@@ -31,8 +32,9 @@ export default createGlobalStyle`
    *::before,
    *::after {
      box-sizing: border-box;
-     background: var(--primary);
+     //ackground: var(--primary);
      font-family: var(--ff-sans);
+     text-align: center;
    }
 
    h1, h2, h3 {
@@ -46,6 +48,8 @@ export default createGlobalStyle`
    body {
      line-height: 1.5;
      font-size: 1.25rem; /* var(--fs-400) */
+     margin: 0;
+     padding:0;
    }
 
    ul[class],
