@@ -31,7 +31,7 @@ import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
 import wc from '../assets/map-pins/wc.png';
-
+import trash from '../assets/trash.svg';
 import mapPin from '../lib/icons';
 export default function LocationCard({ location }) {
   function mapPin(location) {
@@ -115,6 +115,9 @@ export default function LocationCard({ location }) {
       <span>{mapPin(location)}</span>
       <p>{location.position}</p>
       <p>{location.adress}</p>
+      <DeleteButton>
+        <img src={trash} alt="wc pin" width="30" height="30" />
+      </DeleteButton>
     </Card>
   );
 }
@@ -128,7 +131,7 @@ const Card = styled.article`
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   font-family: sans-serif;
-  height: 10rem;
+  height: 12rem;
   padding: 1rem 1rem;
 
   span {
@@ -136,7 +139,8 @@ const Card = styled.article`
   }
   //min-width: calc((100% - 2rem) / 4);
 `;
-/* 
-const Pin = styled.p`
-  transform: scale(1.5);
-`; */
+
+const DeleteButton = styled.button`
+  background: transparent;
+  border: none;
+`;
