@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import mapPin from '../lib/icons';
 import airport from '../assets/map-pins/airport.png';
 import bank from '../assets/map-pins/bank.png';
@@ -34,7 +35,7 @@ import wc from '../assets/map-pins/wc.png';
 
 export default function SelectIcons({ location, onSetLocation }) {
   return (
-    <>
+    <SelectWrapper>
       {location.icon === '' ? null : (
         <img src={mapPin(location)} alt="map pin"></img>
       )}
@@ -42,192 +43,192 @@ export default function SelectIcons({ location, onSetLocation }) {
         <label htmlFor="icon">Choose a pin</label>
         <select className="dropbtn">Choose a pin</select>
         <div className="dropdown-content">
-          <button
+          <Button
             type="button"
             onClick={() => onSetLocation({ ...location, icon: 'airport' })}
           >
-            <img src={airport} alt="airport pin" width="30" height="30" />
-          </button>
-          <a
-            href="#"
+            <Img src={airport} alt="airport pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'bank' })}
           >
-            <img src={bank} alt="bank pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={bank} alt="bank pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'bar' })}
           >
-            <img src={bar} alt="bar pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={bar} alt="bar pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'bookmark' })}
           >
-            <img src={bookmark} alt="bar pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={bookmark} alt="bar pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'burger' })}
           >
-            <img src={burger} alt="bar pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={burger} alt="bar pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'bus' })}
           >
-            <img src={bus} alt="bus pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={bus} alt="bus pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'camera' })}
           >
-            <img src={camera} alt="camera pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={camera} alt="camera pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'cinema' })}
           >
-            <img src={cinema} alt="cinema pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={cinema} alt="cinema pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'clothes' })}
           >
-            <img src={clothes} alt="clothes pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={clothes} alt="clothes pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'coffee' })}
           >
-            <img src={coffee} alt="coffee pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={coffee} alt="coffee pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'drink' })}
           >
-            <img src={drink} alt="drink pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={drink} alt="drink pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'earth' })}
           >
-            <img src={earth} alt="earth pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={earth} alt="earth pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'gasoline' })}
           >
-            <img src={gasoline} alt="gasoline pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={gasoline} alt="gasoline pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'government' })}
           >
-            <img src={government} alt="government pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={government} alt="government pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'gym' })}
           >
-            <img src={gym} alt="gym pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={gym} alt="gym pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'heart' })}
           >
-            <img src={heart} alt="heart pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={heart} alt="heart pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'home' })}
           >
-            <img src={home} alt="home pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={home} alt="home pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'hospital' })}
           >
-            <img src={hospital} alt="hospital pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={hospital} alt="hospital pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'house' })}
           >
-            <img src={house} alt="house pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={house} alt="house pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'image' })}
           >
-            <img src={image} alt="foto pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={image} alt="foto pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'info' })}
           >
-            <img src={info} alt="info pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={info} alt="info pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'lethal' })}
           >
-            <img src={lethal} alt="lethal pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={lethal} alt="lethal pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'med' })}
           >
-            <img src={med} alt="med pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={med} alt="med pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'office' })}
           >
-            <img src={office} alt="office pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={office} alt="office pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'parking' })}
           >
-            <img src={parking} alt="parking pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={parking} alt="parking pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'picnic' })}
           >
-            <img src={picnic} alt="picnic pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={picnic} alt="picnic pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'save' })}
           >
-            <img src={save} alt="save pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={save} alt="save pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'ship' })}
           >
-            <img src={ship} alt="ship pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={ship} alt="ship pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'spa' })}
           >
-            <img src={spa} alt="spa pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={spa} alt="spa pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'star' })}
           >
-            <img src={star} alt="star pin" width="30" height="30" />
-          </a>
-          <a
-            href="#"
+            <Img src={star} alt="star pin" width="30" height="30" />
+          </Button>
+          <Button
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'taxi' })}
           >
-            <img src={taxi} alt="taxi pin" width="30" height="30" />
-          </a>
+            <Img src={taxi} alt="taxi pin" width="30" height="30" />
+          </Button>
           <a
             href="#"
             onClick={() => onSetLocation({ ...location, icon: 'wc' })}
@@ -236,6 +237,76 @@ export default function SelectIcons({ location, onSetLocation }) {
           </a>
         </div>
       </div>
-    </>
+    </SelectWrapper>
   );
 }
+
+const SelectWrapper = styled.div`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  .dropbtn {
+    padding: 0.5rem;
+    font-size: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+  }
+
+  .dropdown {
+    position: relative;
+    //display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    background-color: transparent;
+    position: absolute;
+    //background-color: #f9f9f9;
+    min-width: 3rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* .dropdown-content a {
+    background-color: transparent;
+    color: black;
+    //padding: 0.375rem 0.5rem;
+    text-decoration: none;
+    //display: block;
+    width: 9vw;
+  } */
+
+  /* .dropdown-content a:hover {
+  background-color: var(--secondary);
+} */
+
+  .dropdown:hover .dropdown-content {
+    //display: block;
+    background-color: transparent;
+    background: blur(0.375rem);
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: var(--secondary);
+  }
+`;
+
+const Button = styled.button`
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  //display: block;
+  width: 9vw;
+`;
+
+const Img = styled.img`
+  transform: scale(1.5);
+  margin: 0;
+  padding: 0;
+`;

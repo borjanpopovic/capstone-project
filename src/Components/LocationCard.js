@@ -31,7 +31,7 @@ import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
 import wc from '../assets/map-pins/wc.png';
-import validateLocation from '../lib/Validation';
+
 import mapPin from '../lib/icons';
 export default function LocationCard({ location }) {
   function mapPin(location) {
@@ -112,7 +112,7 @@ export default function LocationCard({ location }) {
     <Card>
       <h2>{location.name}</h2>
       <p>{location.category}</p>
-      <p>{mapPin(location)}</p>
+      <span>{mapPin(location)}</span>
       <p>{location.position}</p>
       <p>{location.adress}</p>
     </Card>
@@ -120,11 +120,23 @@ export default function LocationCard({ location }) {
 }
 
 const Card = styled.article`
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: var(--primary);
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   font-family: sans-serif;
   height: 10rem;
   padding: 1rem 1rem;
+
+  span {
+    transform: scale(2);
+  }
   //min-width: calc((100% - 2rem) / 4);
 `;
+/* 
+const Pin = styled.p`
+  transform: scale(1.5);
+`; */

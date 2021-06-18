@@ -37,26 +37,6 @@ export default function LocationForm({ onAddLocations }) {
     }
   }
 
-  /* function mapPin(location) {
-    const icons = {
-      airport: airport,
-      bar: bar,
-      bank: bank,
-    };
-    return icons[location.icon]; */
-  // switch (location.icon) {
-  //   case 'airport':
-  //     return airport;
-  //   case 'bank':
-  //     return bank;
-  //   case 'bar':
-  //     return bar;
-  //   case 'bookmark':
-  //     return bookmark;
-  //   default:
-  //     return '';
-  // }
-
   return (
     <Form onSubmit={handleFormSubmit}>
       {isError ? <ErrorBox>Please check your entries</ErrorBox> : null}
@@ -112,55 +92,6 @@ const Form = styled.form`
   margin-top: 3rem;
   margin: 1rem;
   text-align: center;
-  .dropbtn {
-    padding: 0.5rem;
-    font-size: 0.5rem;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-  }
-
-  .dropdown {
-    position: relative;
-    //display: inline-block;
-  }
-
-  .dropdown-content {
-    display: none;
-    background-color: transparent;
-    position: absolute;
-    //background-color: #f9f9f9;
-    min-width: 3rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    background-color: transparent;
-    color: black;
-    //padding: 0.375rem 0.5rem;
-    text-decoration: none;
-    //display: block;
-    width: 9vw;
-  }
-
-  /* .dropdown-content a:hover {
-    background-color: var(--secondary);
-  } */
-
-  .dropdown:hover .dropdown-content {
-    //display: block;
-    background-color: transparent;
-    background: blur(6px);
-
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-  }
-
-  .dropdown:hover .dropbtn {
-    background-color: var(--secondary);
-  }
 `;
 
 const ErrorBox = styled.div`
