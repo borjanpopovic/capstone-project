@@ -17,7 +17,7 @@ const FormWrapper = styled.div`
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
+  margin-top: 0.5rem;
   width: 80vw; ;
 `;
 
@@ -32,7 +32,7 @@ const FormWrapper = styled.div`
 const H1 = styled.h1`
   color: var(--border-dark);
   font-size: 1.25rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
   padding-top: 1rem;
   text-align: center;
 `;

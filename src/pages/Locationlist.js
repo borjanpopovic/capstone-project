@@ -30,7 +30,7 @@ const LocationCards = styled.div`
 `; */
 const H1 = styled.h1`
   font-size: 1.25rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   color: var(--border-dark);
   text-align: center;

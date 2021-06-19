@@ -12,7 +12,7 @@ const Headline = styled.h1`
   color: var(--border-dark);
   left: 0;
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   position: ${(props) => (props.isStatic ? 'static' : 'fixed')};
   right: 0;
   text-align: center;

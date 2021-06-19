@@ -26,7 +26,7 @@ export default function Map() {
 const H1 = styled.h1`
   color: var(--border-dark);
   font-size: 1.25rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
   padding-top: 1rem;
   text-align: center;
 `;
@@ -34,7 +34,7 @@ const H1 = styled.h1`
 const MapWrapper = styled.div`
   .leaflet-container {
     bottom: 0;
-    height: 33.2rem;
+    height: 34.2rem;
     margin-top: 1rem;
     width: 100%;
     z-index: 0;
