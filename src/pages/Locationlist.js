@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import '../App';
 import LocationCard from '../Components/LocationCard';
-export default function Locationlist({ locations }) {
+export default function Locationlist({ locations, onRemoveFromList }) {
   return (
     <>
       <H1>Your location list</H1>
       <LocationCards>
         {locations.map((location, index) => (
-          <LocationCard key={index + location} location={location} />
+          <LocationCard
+            key={index + location}
+            location={location}
+            onRemoveFromList={onRemoveFromList}
+          />
         ))}
       </LocationCards>
     </>

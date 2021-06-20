@@ -18,6 +18,14 @@ function App() {
     saveToLocal('locations', locations);
   }, [locations]);
 
+  function removeFromList(newLocationList) {
+    const newList = locations.filter(
+      (location) => location.index !== newLocationList.index
+    );
+
+    setLocations(newList);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -27,7 +35,10 @@ function App() {
             <Form onAddLocations={addLocations} />
           </Route>
           <Route path="/location-list">
-            <Locationlist locations={locations} />
+            <Locationlist
+              locations={locations}
+              onRemoveFromList={removeFromList}
+            />
           </Route>
           <Route path="/map">
             <Map />
