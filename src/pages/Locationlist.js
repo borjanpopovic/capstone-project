@@ -20,7 +20,7 @@ export default function Locationlist({ locations, onRemoveFromList }) {
 
 const LocationCards = styled.div`
   padding: 1rem;
-  margin-top: 5rem;
+  margin-top: 0.5rem;
 `;
 
 /* const H1 = styled.h1`

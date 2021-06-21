@@ -233,7 +233,7 @@ export default function SelectIcons({ location, onSetLocation }) {
             href="#"
             onClick={() => onSetLocation({ ...location, icon: 'wc' })}
           >
-            <img src={wc} alt="wc pin" width="30" height="30" />
+            <ImgWC src={wc} alt="wc pin" width="30" height="30" />
           </Button>
         </div>
       </div>
@@ -262,6 +262,7 @@ const SelectWrapper = styled.div`
   .dropdown-content {
     display: none;
     background-color: transparent;
+    backdrop-filter: blur(0.2rem);
     position: absolute;
     //background-color: #f9f9f9;
     min-width: 3rem;
@@ -307,6 +308,12 @@ const Button = styled.button`
 
 const Img = styled.img`
   transform: scale(1.5);
+  margin: 0;
+  padding: 0;
+`;
+
+const ImgWC = styled.img`
+  transform: scale(0.8);
   margin: 0;
   padding: 0;
 `;

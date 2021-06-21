@@ -32,7 +32,7 @@ import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
 import wc from '../assets/map-pins/wc.png';
 import trash from '../assets/trash.svg';
-/* import mapPin from '../lib/icons'; */
+
 import '../App';
 export default function LocationCard({ location, onRemoveFromList }) {
   function mapPin(location) {
@@ -111,7 +111,7 @@ export default function LocationCard({ location, onRemoveFromList }) {
 
   return (
     <Card>
-      <h2>{location.name}</h2>
+      <h3>{location.name}</h3>
       <p>{location.category}</p>
       <span>{mapPin(location)}</span>
       <p>{location.position}</p>
@@ -124,6 +124,7 @@ export default function LocationCard({ location, onRemoveFromList }) {
 }
 
 const Card = styled.article`
+  color: var(--border-dark);
   display: flex;
   align-content: center;
   align-items: center;
@@ -133,6 +134,7 @@ const Card = styled.article`
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   font-family: sans-serif;
   height: 12rem;
+  margin: 1rem;
   padding: 1rem 1rem;
 
   span {
@@ -144,4 +146,5 @@ const Card = styled.article`
 const DeleteButton = styled.button`
   background: transparent;
   border: none;
+  transform: scale(0.5);
 `;
