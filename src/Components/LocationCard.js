@@ -32,8 +32,9 @@ import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
 import wc from '../assets/map-pins/wc.png';
 import trash from '../assets/trash.svg';
-import mapPin from '../lib/icons';
-export default function LocationCard({ location }) {
+/* import mapPin from '../lib/icons'; */
+import '../App';
+export default function LocationCard({ location, onRemoveFromList }) {
   function mapPin(location) {
     switch (location.icon) {
       case 'airport':
@@ -115,8 +116,8 @@ export default function LocationCard({ location }) {
       <span>{mapPin(location)}</span>
       <p>{location.position}</p>
       <p>{location.adress}</p>
-      <DeleteButton>
-        <img src={trash} alt="wc pin" width="30" height="30" />
+      <DeleteButton onClick={() => onRemoveFromList(location)}>
+        <img src={trash} alt="trash" width="30" height="30" />
       </DeleteButton>
     </Card>
   );
