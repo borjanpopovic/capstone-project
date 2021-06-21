@@ -20,7 +20,7 @@ function App() {
 
   function removeFromList(newLocationList) {
     const newList = locations.filter(
-      (location) => location.index !== newLocationList.index
+      (location) => location !== newLocationList
     );
 
     setLocations(newList);

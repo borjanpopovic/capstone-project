@@ -229,12 +229,12 @@ export default function SelectIcons({ location, onSetLocation }) {
           >
             <Img src={taxi} alt="taxi pin" width="30" height="30" />
           </Button>
-          <a
+          <Button
             href="#"
             onClick={() => onSetLocation({ ...location, icon: 'wc' })}
           >
             <img src={wc} alt="wc pin" width="30" height="30" />
-          </a>
+          </Button>
         </div>
       </div>
     </SelectWrapper>
