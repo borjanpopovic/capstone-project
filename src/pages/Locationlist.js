@@ -23,15 +23,6 @@ const LocationCards = styled.div`
   margin-top: 0.5rem;
 `;
 
-/* const H1 = styled.h1`
-  font-size: 1.25rem;
-  margin-top: 5rem;
-  margin-bottom: 1rem;
-  color: var(--border);
-  text-align: center;
-  padding-top: 2rem;
-  z-index: 100;
-`; */
 const H1 = styled.h1`
   font-size: 1.25rem;
   margin-top: 4rem;

@@ -1,6 +1,6 @@
 const validateName = (name) => name.length >= 2;
-const validateAdress = (adress) => adress.length >= 5;
+const validateAddress = (address) => address.length >= 5;
 
 const validateLocation = (location) =>
-  validateName(location.name) && validateAdress(location.adress);
+  validateName(location.name) && validateAddress(location.address);
 export default validateLocation;

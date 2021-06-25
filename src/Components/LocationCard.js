@@ -115,7 +115,7 @@ export default function LocationCard({ location, onRemoveFromList }) {
       <p>{location.category}</p>
       <span>{mapPin(location)}</span>
       <p>{location.position}</p>
-      <p>{location.adress}</p>
+      <p>{location.address}</p>
       <DeleteButton onClick={() => onRemoveFromList(location)}>
         <img src={trash} alt="trash" width="30" height="30" />
       </DeleteButton>
@@ -129,7 +129,12 @@ const Card = styled.article`
   align-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
+  background: linear-gradient(
+    to right bottom,
+    hsl(105, 55%, 97%),
+    hsl(105, 55%, 100%)
+  );
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   font-family: sans-serif;

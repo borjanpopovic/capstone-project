@@ -1,22 +1,26 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useEffect } from 'react/cjs/react.development';
 
 import validateLocation from '../lib/Validation';
-/* import mapPin from '../lib/icons'; */
+
 import SelectIcons from './SelectIcons';
 export default function LocationForm({ onAddLocations }) {
   const initialLocation = {
     name: '',
     category: '',
     icon: '',
-    position: '',
-    adress: '',
+    latitude: '',
+    longitude: '',
+    address: '',
   };
 
   const [location, setLocation] = useState(initialLocation);
   const [isError, setIsError] = useState(false);
-  //console.log('added location', location);
+  /*  const [lat, setLat] = useState(null);
+  const [lng, setLng] = useState(null); */
+  const [status, setStatus] = useState(null);
+
+  console.log('added location', location);
 
   function updateLocation(event) {
     const fieldName = event.target.name;
@@ -37,17 +41,38 @@ export default function LocationForm({ onAddLocations }) {
     }
   }
 
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      setStatus('Geolocation is not supported by your browser');
+    } else {
+      setStatus('Locating...');
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setStatus(null);
+          setLocation({
+            ...location,
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        () => {
+          setStatus('Unable to retrieve your location');
+        }
+      );
+    }
+  };
+
   return (
     <Form onSubmit={handleFormSubmit}>
       {isError ? <ErrorBox>Please check your entries</ErrorBox> : null}
-      <label htmlFor="locationName">location name</label>
+      <label htmlFor="locationName">Location name</label>
       <input
         onChange={updateLocation}
         type="text"
         name="name"
         value={location.name}
       />
-      <label htmlFor="category">category</label>
+      <label htmlFor="category">Category</label>
       <input
         onChange={updateLocation}
         type="text"
@@ -56,19 +81,38 @@ export default function LocationForm({ onAddLocations }) {
       />
       <SelectIcons location={location} onSetLocation={setLocation} />
 
-      <label htmlFor="currentPosition">currentPosition</label>
+      {/* <label htmlFor="currentPosition">currentPosition</label> */}
+      <Button
+        onClick={getLocation}
+        htmlFor="currentPosition"
+        onChange={updateLocation}
+        type="button"
+        name="Get your position"
+      >
+        Get your position
+      </Button>
+      <p>{status}</p>
       <input
         onChange={updateLocation}
+        placeholder="Latitude"
         type="text"
-        name="currentPosition"
-        value={location.position}
+        value={location.latitude}
+        name="latitude"
       />
-      <label htmlFor="adress">adress</label>
+      <input
+        onChange={updateLocation}
+        placeholder="Longitude"
+        type="text"
+        value={location.longitude}
+        name="longitude"
+      />
+
+      <label htmlFor="address">Address</label>
       <input
         onChange={updateLocation}
         type="text"
-        name="adress"
-        value={location.adress}
+        name="address"
+        value={location.address}
       />
       <Button>Add to list/map</Button>
     </Form>
@@ -81,7 +125,12 @@ const Form = styled.form`
   margin: 0 auto;
   //max-width: 28rem;
   //border: 1px solid var(--secondary);
-  background: var(--primary);
+  /*  background: var(--primary); */
+  background: linear-gradient(
+    to right bottom,
+    hsl(105, 55%, 97%),
+    hsl(105, 55%, 100%)
+  );
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   color: var(--border-dark);
@@ -92,6 +141,19 @@ const Form = styled.form`
   margin-top: 3rem;
   margin: 1rem;
   text-align: center;
+
+  input {
+    border: 0.05rem solid var(--border-dark);
+    border-radius: 2rem;
+
+    font-size: 0.8rem;
+    margin: 0.1rem;
+    padding: 0.1rem 0.4rem;
+  }
+
+  p {
+    font-size: 0.7rem;
+  }
 `;
 
 const ErrorBox = styled.div`
@@ -104,8 +166,8 @@ const ErrorBox = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 1rem;
-  font-size: 1rem;
+  padding: 0.6rem;
+  font-size: 0.8rem;
   background-color: var(--secondary);
   border: none;
   border-radius: 1rem;
