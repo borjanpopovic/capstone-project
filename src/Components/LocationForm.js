@@ -79,7 +79,6 @@ export default function LocationForm({ onAddLocations }) {
       />
       <SelectIcons location={location} onSetLocation={setLocation} />
 
-      {/* <label htmlFor="currentPosition">currentPosition</label> */}
       <Button
         onClick={getLocation}
         htmlFor="currentPosition"
@@ -141,7 +140,6 @@ const Form = styled.form`
   text-align: center;
 
   input {
-    //border: 0.05rem solid var(--border-dark);
     border: none;
     border-radius: 2rem;
     box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);

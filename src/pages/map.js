@@ -1,11 +1,9 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
+import { useState } from 'react';
 import styled from 'styled-components';
 import '../App';
 
 export default function Map({ locations }) {
-  /*  const [activeLocation, setActiveLocation] = useState(null); */
-
   return (
     <>
       <H1>Your map</H1>
@@ -19,10 +17,14 @@ export default function Map({ locations }) {
             <Marker
               key={location}
               position={[location.latitude, location.longitude]}
-              /* onCLick={() => {
-                setActiveLocation(location);
-              }} */
-            />
+            >
+              <Popup position={[location.latitude, location.longitude]}>
+                <div>
+                  <h2>{location.name}</h2>
+                  <p>{location.category}</p>
+                </div>
+              </Popup>
+            </Marker>
           ))}
         </MapContainer>
       </MapWrapper>
@@ -41,7 +43,7 @@ const H1 = styled.h1`
 const MapWrapper = styled.div`
   .leaflet-container {
     bottom: 0;
-    height: 34.2rem;
+    height: 88vh;
     margin-top: 1rem;
     width: 100%;
     z-index: 0;
@@ -51,5 +53,3 @@ const MapWrapper = styled.div`
     background: transparent;
   }
 `;
-
-/* 53.54541316002105, 9.985753997521998; */
