@@ -41,7 +41,7 @@ function App() {
             />
           </Route>
           <Route path="/map">
-            <Map />
+            <Map locations={locations} />
           </Route>
         </Switch>
       </MainWrapper>

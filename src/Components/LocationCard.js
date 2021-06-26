@@ -114,7 +114,6 @@ export default function LocationCard({ location, onRemoveFromList }) {
       <h3>{location.name}</h3>
       <p>{location.category}</p>
       <span>{mapPin(location)}</span>
-      <p>{location.position}</p>
       <p>{location.address}</p>
       <DeleteButton onClick={() => onRemoveFromList(location)}>
         <img src={trash} alt="trash" width="30" height="30" />
@@ -138,7 +137,7 @@ const Card = styled.article`
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   font-family: sans-serif;
-  height: 12rem;
+  height: auto;
   margin: 1rem;
   padding: 1rem 1rem;
 

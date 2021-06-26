@@ -2,9 +2,10 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import styled from 'styled-components';
 import '../App';
-import mapPin from '../lib/icons';
 
-export default function Map(locations) {
+export default function Map({ locations }) {
+  /*  const [activeLocation, setActiveLocation] = useState(null); */
+
   return (
     <>
       <H1>Your map</H1>
@@ -17,8 +18,10 @@ export default function Map(locations) {
           {locations.map((location) => (
             <Marker
               key={location}
-              position={location.adress}
-              icon={mapPin(location)}
+              position={[location.latitude, location.longitude]}
+              /* onCLick={() => {
+                setActiveLocation(location);
+              }} */
             />
           ))}
         </MapContainer>

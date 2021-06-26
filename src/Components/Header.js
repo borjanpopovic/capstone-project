@@ -11,7 +11,7 @@ const Headline = styled.h1`
     hsl(105, 55%, 97%),
     hsl(105, 55%, 100%)
   );
-  /* background: var(--primary); */
+
   box-shadow: 0 2px 0.75rem hsla(213, 52%, 20%, 0.2);
   color: var(--border-dark);
   left: 0;

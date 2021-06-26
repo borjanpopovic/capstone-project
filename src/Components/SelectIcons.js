@@ -256,7 +256,6 @@ const SelectWrapper = styled.div`
 
   .dropdown {
     position: relative;
-    //display: inline-block;
   }
 
   .dropdown-content {
@@ -264,27 +263,13 @@ const SelectWrapper = styled.div`
     background-color: transparent;
     backdrop-filter: blur(0.2rem);
     position: absolute;
-    //background-color: #f9f9f9;
+
     min-width: 3rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
 
-  /* .dropdown-content a {
-    background-color: transparent;
-    color: black;
-    //padding: 0.375rem 0.5rem;
-    text-decoration: none;
-    //display: block;
-    width: 9vw;
-  } */
-
-  /* .dropdown-content a:hover {
-  background-color: var(--secondary);
-} */
-
   .dropdown:hover .dropdown-content {
-    //display: block;
     background-color: transparent;
     background: blur(0.375rem);
 
@@ -302,7 +287,7 @@ const Button = styled.button`
   background: transparent;
   border: none;
   text-decoration: none;
-  //display: block;
+
   width: 9vw;
 `;
 

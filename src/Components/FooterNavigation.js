@@ -50,8 +50,6 @@ const NavBox = styled.div`
 `;
 
 const NavLinkStyled = styled(NavLink)`
-  //border: 0.031rem solid var(--border-dark);
-
   background: transparent;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   border-radius: 3rem;
@@ -62,12 +60,7 @@ const NavLinkStyled = styled(NavLink)`
   padding: 12px 14px 10px 14px;
   text-decoration: none;
 
-  /* :hover {
-    background: var(--secondary);
-  } */
-
   img:hover {
     background: var(--secondary);
-    /* border-radius: 3rem; */
   }
 `;
