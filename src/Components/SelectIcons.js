@@ -292,7 +292,7 @@ const SelectWrapper = styled.div`
     backdrop-filter: blur(0.2rem);
     border-radius: 1rem;
     position: absolute;
-    width: 15rem;
+    width: 15.3rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
     z-index: 1;
@@ -305,7 +305,7 @@ const SelectWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: 0.1rem;
+    gap: 0.23rem;
   }
 
   .dropdown:hover .dropbtn {
@@ -323,6 +323,7 @@ const Button = styled.button`
 
 const ImgSelected = styled.img`
   margin-left: 3rem;
+  transform: scale(1.3);
 `;
 
 const Img = styled.img`

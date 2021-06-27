@@ -154,7 +154,7 @@ const Card = styled.article`
   padding: 1rem 1rem;
 
   span {
-    transform: scale(2);
+    transform: scale(1.5);
   }
 `;
 
