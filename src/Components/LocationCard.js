@@ -30,7 +30,11 @@ import ship from '../assets/map-pins/ship.png';
 import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
+import tree from '../assets/map-pins/tree.png';
 import wc from '../assets/map-pins/wc.png';
+import wifi from '../assets/map-pins/wifi.png';
+import yoga from '../assets/map-pins/yoga.png';
+import zoo from '../assets/map-pins/zoo.png';
 import trash from '../assets/trash.svg';
 
 import '../App';
@@ -101,8 +105,16 @@ export default function LocationCard({ location, onRemoveFromList }) {
         return <img src={star} alt="star pin" width="30" height="30" />;
       case 'taxi':
         return <img src={taxi} alt="taxi pin" width="30" height="30" />;
+      case 'tree':
+        return <img src={tree} alt="taxi pin" width="30" height="30" />;
       case 'wc':
         return <img src={wc} alt="wc pin" width="30" height="30" />;
+      case 'wifi':
+        return <img src={wifi} alt="wc pin" width="30" height="30" />;
+      case 'yoga':
+        return <img src={yoga} alt="wc pin" width="30" height="30" />;
+      case 'zoo':
+        return <img src={zoo} alt="wc pin" width="30" height="30" />;
 
       default:
         return '';
@@ -113,7 +125,7 @@ export default function LocationCard({ location, onRemoveFromList }) {
     <Card>
       <h3>{location.name}</h3>
       <p>{location.category}</p>
-      <span isWC={wc}>{mapPin(location)}</span>
+      <span>{mapPin(location)}</span>
       <p>{location.address}</p>
       <DeleteButton onClick={() => onRemoveFromList(location)}>
         <img src={trash} alt="trash" width="30" height="30" />
@@ -142,7 +154,7 @@ const Card = styled.article`
   padding: 1rem 1rem;
 
   span {
-    transform: ${(props) => (props.isWC ? '' : 'scale(2)')};
+    transform: scale(2);
   }
 `;
 

@@ -31,7 +31,11 @@ import ship from '../assets/map-pins/ship.png';
 import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
+import tree from '../assets/map-pins/tree.png';
 import wc from '../assets/map-pins/wc.png';
+import wifi from '../assets/map-pins/wifi.png';
+import yoga from '../assets/map-pins/yoga.png';
+import zoo from '../assets/map-pins/zoo.png';
 
 export default function SelectIcons({ location, onSetLocation }) {
   return (
@@ -230,10 +234,34 @@ export default function SelectIcons({ location, onSetLocation }) {
             <Img src={taxi} alt="taxi pin" width="30" height="30" />
           </Button>
           <Button
+            type="button"
+            onClick={() => onSetLocation({ ...location, icon: 'tree' })}
+          >
+            <Img src={tree} alt="tree pin" width="30" height="30" />
+          </Button>
+          <Button
             href="#"
             onClick={() => onSetLocation({ ...location, icon: 'wc' })}
           >
-            <ImgWC src={wc} alt="wc pin" width="30" height="30" />
+            <Img src={wc} alt="wc pin" width="30" height="30" />
+          </Button>
+          <Button
+            href="#"
+            onClick={() => onSetLocation({ ...location, icon: 'wifi' })}
+          >
+            <Img src={wifi} alt="wifi pin" width="30" height="30" />
+          </Button>
+          <Button
+            href="#"
+            onClick={() => onSetLocation({ ...location, icon: 'yoga' })}
+          >
+            <Img src={yoga} alt="yoga pin" width="30" height="30" />
+          </Button>
+          <Button
+            href="#"
+            onClick={() => onSetLocation({ ...location, icon: 'zoo' })}
+          >
+            <Img src={zoo} alt="zoo pin" width="25" height="25" />
           </Button>
         </div>
       </div>
@@ -264,8 +292,9 @@ const SelectWrapper = styled.div`
     backdrop-filter: blur(0.2rem);
     border-radius: 1rem;
     position: absolute;
-    width: 13rem;
+    width: 15rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    padding: 1rem;
     z-index: 1;
   }
 
@@ -276,6 +305,7 @@ const SelectWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
+    gap: 0.1rem;
   }
 
   .dropdown:hover .dropbtn {
@@ -292,13 +322,9 @@ const Button = styled.button`
 `;
 
 const ImgSelected = styled.img`
-  margin-left: 1.8rem;
+  margin-left: 3rem;
 `;
 
 const Img = styled.img`
   transform: scale(1.5);
-`;
-
-const ImgWC = styled.img`
-  transform: scale(0.75);
 `;
