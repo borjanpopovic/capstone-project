@@ -120,9 +120,7 @@ const Form = styled.form`
   display: grid;
   gap: 0.8rem;
   margin: 0 auto;
-  //max-width: 28rem;
-  //border: 1px solid var(--secondary);
-  /*  background: var(--primary); */
+
   background: linear-gradient(
     to right bottom,
     hsl(105, 55%, 97%),

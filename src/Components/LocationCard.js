@@ -113,7 +113,7 @@ export default function LocationCard({ location, onRemoveFromList }) {
     <Card>
       <h3>{location.name}</h3>
       <p>{location.category}</p>
-      <span>{mapPin(location)}</span>
+      <span isWC={wc}>{mapPin(location)}</span>
       <p>{location.address}</p>
       <DeleteButton onClick={() => onRemoveFromList(location)}>
         <img src={trash} alt="trash" width="30" height="30" />
@@ -128,7 +128,7 @@ const Card = styled.article`
   align-content: center;
   align-items: center;
   flex-direction: column;
-  /* background-color: var(--primary); */
+
   background: linear-gradient(
     to right bottom,
     hsl(105, 55%, 97%),
@@ -142,9 +142,8 @@ const Card = styled.article`
   padding: 1rem 1rem;
 
   span {
-    transform: scale(2);
+    transform: ${(props) => (props.isWC ? '' : 'scale(2)')};
   }
-  //min-width: calc((100% - 2rem) / 4);
 `;
 
 const DeleteButton = styled.button`

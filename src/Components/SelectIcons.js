@@ -20,7 +20,7 @@ import home from '../assets/map-pins/home.png';
 import hospital from '../assets/map-pins/hospital.png';
 import house from '../assets/map-pins/house.png';
 import image from '../assets/map-pins/image.png';
-import info from '../assets/map-pins/lethal.png';
+import info from '../assets/map-pins/info.png';
 import lethal from '../assets/map-pins/lethal.png';
 import med from '../assets/map-pins/med.png';
 import office from '../assets/map-pins/office.png';
@@ -37,7 +37,7 @@ export default function SelectIcons({ location, onSetLocation }) {
   return (
     <SelectWrapper>
       {location.icon === '' ? null : (
-        <img src={mapPin(location)} alt="map pin"></img>
+        <ImgSelected src={mapPin(location)} alt="map pin" />
       )}
       <div className="dropdown">
         <label htmlFor="icon">Choose a pin</label>
@@ -262,9 +262,9 @@ const SelectWrapper = styled.div`
     display: none;
     background-color: transparent;
     backdrop-filter: blur(0.2rem);
+    border-radius: 1rem;
     position: absolute;
-
-    min-width: 3rem;
+    width: 13rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
@@ -272,7 +272,7 @@ const SelectWrapper = styled.div`
   .dropdown:hover .dropdown-content {
     background-color: transparent;
     background: blur(0.375rem);
-
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -291,14 +291,14 @@ const Button = styled.button`
   width: 9vw;
 `;
 
+const ImgSelected = styled.img`
+  margin-left: 1.8rem;
+`;
+
 const Img = styled.img`
   transform: scale(1.5);
-  margin: 0;
-  padding: 0;
 `;
 
 const ImgWC = styled.img`
-  transform: scale(0.8);
-  margin: 0;
-  padding: 0;
+  transform: scale(0.75);
 `;
