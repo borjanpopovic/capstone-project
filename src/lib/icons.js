@@ -29,7 +29,11 @@ import ship from '../assets/map-pins/ship.png';
 import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
+import tree from '../assets/map-pins/tree.png';
 import wc from '../assets/map-pins/wc.png';
+import wifi from '../assets/map-pins/wifi.png';
+import yoga from '../assets/map-pins/yoga.png';
+import zoo from '../assets/map-pins/zoo.png';
 
 export default function mapPin(location) {
   const icons = {
@@ -64,7 +68,11 @@ export default function mapPin(location) {
     spa: spa,
     star: star,
     taxi: taxi,
+    tree: tree,
     wc: wc,
+    wifi: wifi,
+    yoga: yoga,
+    zoo: zoo,
   };
   return icons[location.icon];
 }

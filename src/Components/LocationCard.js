@@ -30,7 +30,11 @@ import ship from '../assets/map-pins/ship.png';
 import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
+import tree from '../assets/map-pins/tree.png';
 import wc from '../assets/map-pins/wc.png';
+import wifi from '../assets/map-pins/wifi.png';
+import yoga from '../assets/map-pins/yoga.png';
+import zoo from '../assets/map-pins/zoo.png';
 import trash from '../assets/trash.svg';
 
 import '../App';
@@ -101,8 +105,16 @@ export default function LocationCard({ location, onRemoveFromList }) {
         return <img src={star} alt="star pin" width="30" height="30" />;
       case 'taxi':
         return <img src={taxi} alt="taxi pin" width="30" height="30" />;
+      case 'tree':
+        return <img src={tree} alt="taxi pin" width="30" height="30" />;
       case 'wc':
         return <img src={wc} alt="wc pin" width="30" height="30" />;
+      case 'wifi':
+        return <img src={wifi} alt="wc pin" width="30" height="30" />;
+      case 'yoga':
+        return <img src={yoga} alt="wc pin" width="30" height="30" />;
+      case 'zoo':
+        return <img src={zoo} alt="wc pin" width="30" height="30" />;
 
       default:
         return '';
@@ -114,8 +126,7 @@ export default function LocationCard({ location, onRemoveFromList }) {
       <h3>{location.name}</h3>
       <p>{location.category}</p>
       <span>{mapPin(location)}</span>
-      <p>{location.position}</p>
-      <p>{location.adress}</p>
+      <p>{location.address}</p>
       <DeleteButton onClick={() => onRemoveFromList(location)}>
         <img src={trash} alt="trash" width="30" height="30" />
       </DeleteButton>
@@ -129,18 +140,22 @@ const Card = styled.article`
   align-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--primary);
+
+  background: linear-gradient(
+    to right bottom,
+    hsl(105, 55%, 97%),
+    hsl(105, 55%, 100%)
+  );
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   font-family: sans-serif;
-  height: 12rem;
+  height: auto;
   margin: 1rem;
   padding: 1rem 1rem;
 
   span {
-    transform: scale(2);
+    transform: scale(1.4);
   }
-  //min-width: calc((100% - 2rem) / 4);
 `;
 
 const DeleteButton = styled.button`

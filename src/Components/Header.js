@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Header({ isStatic }) {
@@ -6,8 +5,12 @@ export default function Header({ isStatic }) {
 }
 
 const Headline = styled.h1`
-  //background-image: linear-gradient(#ff0f7b, #f89b29);
-  background: var(--primary);
+  background: linear-gradient(
+    to right bottom,
+    hsl(105, 55%, 97%),
+    hsl(105, 55%, 100%)
+  );
+
   box-shadow: 0 2px 0.75rem hsla(213, 52%, 20%, 0.2);
   color: var(--border-dark);
   left: 0;

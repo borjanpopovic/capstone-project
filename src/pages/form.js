@@ -21,14 +21,6 @@ const FormWrapper = styled.div`
   width: 80vw; ;
 `;
 
-/* const H1 = styled.h1`
-  font-size: 1.25rem;
-  margin-top: 5rem;
-  margin-bottom: 1rem;
-  color: var(--border);
-  text-align: center;
-  padding-top: 2rem;
-`; */
 const H1 = styled.h1`
   color: var(--border-dark);
   font-size: 1.25rem;

@@ -1,3 +1,4 @@
-```jsx
+<!-- ```jsx
 <SelectIcons />
 ```
+ -->

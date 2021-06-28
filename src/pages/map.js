@@ -1,8 +1,19 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
+import L from 'leaflet';
 import styled from 'styled-components';
 import '../App';
-export default function Map() {
+
+export default function Map({ locations }) {
+  function locationMarker(icon) {
+    const marker = new L.Icon({
+      iconUrl: `/assets/map-pins/${icon}.png`,
+      iconSize: [32, 37],
+      iconAnchor: [16, 37],
+      popupAnchor: [0, -30],
+    });
+    return marker;
+  }
+
   return (
     <>
       <H1>Your map</H1>
@@ -12,11 +23,19 @@ export default function Map() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[53.55, 9.98]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
+          {locations.map((location) => (
+            <Marker
+              key={location}
+              position={[location.latitude, location.longitude]}
+              icon={locationMarker(location.icon)}
+            >
+              <Popup position={[location.latitude, location.longitude]}>
+                <h3>{location.name}</h3>
+                <p>{location.category}</p>
+                <p>{location.address}</p>
+              </Popup>
+            </Marker>
+          ))}
         </MapContainer>
       </MapWrapper>
     </>
@@ -34,7 +53,7 @@ const H1 = styled.h1`
 const MapWrapper = styled.div`
   .leaflet-container {
     bottom: 0;
-    height: 34.2rem;
+    height: 88vh;
     margin-top: 1rem;
     width: 100%;
     z-index: 0;
@@ -45,4 +64,12 @@ const MapWrapper = styled.div`
   }
 `;
 
-/* 53.54541316002105, 9.985753997521998; */
+/* const PopupCard = styled.div`
+  background: linear-gradient(
+    to right bottom,
+    hsl(105, 55%, 97%),
+    hsl(105, 55%, 100%)
+  );
+
+  color: var(--border-dark);
+`; */

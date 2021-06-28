@@ -7,6 +7,7 @@ import Form from './pages/Form';
 import Locationlist from './pages/Locationlist';
 import Map from './pages/Map';
 import { saveToLocal, loadFromLocal } from './lib/localStorage';
+
 function App() {
   const [locations, setLocations] = useState(loadFromLocal('locations') ?? []);
 
@@ -41,7 +42,7 @@ function App() {
             />
           </Route>
           <Route path="/map">
-            <Map />
+            <Map locations={locations} />
           </Route>
         </Switch>
       </MainWrapper>

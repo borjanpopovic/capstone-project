@@ -20,7 +20,7 @@ import home from '../assets/map-pins/home.png';
 import hospital from '../assets/map-pins/hospital.png';
 import house from '../assets/map-pins/house.png';
 import image from '../assets/map-pins/image.png';
-import info from '../assets/map-pins/lethal.png';
+import info from '../assets/map-pins/info.png';
 import lethal from '../assets/map-pins/lethal.png';
 import med from '../assets/map-pins/med.png';
 import office from '../assets/map-pins/office.png';
@@ -31,13 +31,17 @@ import ship from '../assets/map-pins/ship.png';
 import spa from '../assets/map-pins/spa.png';
 import star from '../assets/map-pins/star.png';
 import taxi from '../assets/map-pins/taxi.png';
+import tree from '../assets/map-pins/tree.png';
 import wc from '../assets/map-pins/wc.png';
+import wifi from '../assets/map-pins/wifi.png';
+import yoga from '../assets/map-pins/yoga.png';
+import zoo from '../assets/map-pins/zoo.png';
 
 export default function SelectIcons({ location, onSetLocation }) {
   return (
     <SelectWrapper>
       {location.icon === '' ? null : (
-        <img src={mapPin(location)} alt="map pin"></img>
+        <ImgSelected src={mapPin(location)} alt="map pin" />
       )}
       <div className="dropdown">
         <label htmlFor="icon">Choose a pin</label>
@@ -230,10 +234,34 @@ export default function SelectIcons({ location, onSetLocation }) {
             <Img src={taxi} alt="taxi pin" width="30" height="30" />
           </Button>
           <Button
+            type="button"
+            onClick={() => onSetLocation({ ...location, icon: 'tree' })}
+          >
+            <Img src={tree} alt="tree pin" width="30" height="30" />
+          </Button>
+          <Button
             href="#"
             onClick={() => onSetLocation({ ...location, icon: 'wc' })}
           >
-            <ImgWC src={wc} alt="wc pin" width="30" height="30" />
+            <Img src={wc} alt="wc pin" width="30" height="30" />
+          </Button>
+          <Button
+            href="#"
+            onClick={() => onSetLocation({ ...location, icon: 'wifi' })}
+          >
+            <Img src={wifi} alt="wifi pin" width="30" height="30" />
+          </Button>
+          <Button
+            href="#"
+            onClick={() => onSetLocation({ ...location, icon: 'yoga' })}
+          >
+            <Img src={yoga} alt="yoga pin" width="30" height="30" />
+          </Button>
+          <Button
+            href="#"
+            onClick={() => onSetLocation({ ...location, icon: 'zoo' })}
+          >
+            <Img src={zoo} alt="zoo pin" width="25" height="25" />
           </Button>
         </div>
       </div>
@@ -256,41 +284,28 @@ const SelectWrapper = styled.div`
 
   .dropdown {
     position: relative;
-    //display: inline-block;
   }
 
   .dropdown-content {
     display: none;
     background-color: transparent;
     backdrop-filter: blur(0.2rem);
+    border-radius: 1rem;
     position: absolute;
-    //background-color: #f9f9f9;
-    min-width: 3rem;
+    width: 15.3rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    padding: 1rem;
     z-index: 1;
   }
 
-  /* .dropdown-content a {
-    background-color: transparent;
-    color: black;
-    //padding: 0.375rem 0.5rem;
-    text-decoration: none;
-    //display: block;
-    width: 9vw;
-  } */
-
-  /* .dropdown-content a:hover {
-  background-color: var(--secondary);
-} */
-
   .dropdown:hover .dropdown-content {
-    //display: block;
     background-color: transparent;
     background: blur(0.375rem);
-
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
+    gap: 0.23rem;
   }
 
   .dropdown:hover .dropbtn {
@@ -302,18 +317,15 @@ const Button = styled.button`
   background: transparent;
   border: none;
   text-decoration: none;
-  //display: block;
+
   width: 9vw;
+`;
+
+const ImgSelected = styled.img`
+  margin-left: 3rem;
+  transform: scale(1.3);
 `;
 
 const Img = styled.img`
   transform: scale(1.5);
-  margin: 0;
-  padding: 0;
-`;
-
-const ImgWC = styled.img`
-  transform: scale(0.8);
-  margin: 0;
-  padding: 0;
 `;
