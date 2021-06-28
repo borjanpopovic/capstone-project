@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import validateLocation from '../lib/Validation';
@@ -24,7 +24,26 @@ export default function LocationForm({ onAddLocations }) {
     const fieldName = event.target.name;
     let fieldValue = event.target.value;
 
+    if (fieldName === 'address' && fieldValue.length >= 5) {
+      lookupLocation(fieldValue);
+    }
+
     setLocation({ ...location, [fieldName]: fieldValue });
+  }
+
+  function lookupLocation(address) {
+    const apiUrl = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`; // URLencode
+    fetch(apiUrl)
+      .then((result) => result.json())
+      .then((data) => {
+        // Rosenheimer 143, München
+        setLocation({
+          ...location,
+          latitude: data[0].lat,
+          longitude: data[0].lon,
+          address: address,
+        });
+      });
   }
 
   function handleFormSubmit(event) {

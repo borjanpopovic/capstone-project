@@ -1,9 +1,19 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
+import L from 'leaflet';
 import styled from 'styled-components';
 import '../App';
 
 export default function Map({ locations }) {
+  function locationMarker(icon) {
+    const marker = new L.Icon({
+      iconUrl: `/assets/map-pins/${icon}.png`,
+      iconSize: [32, 37],
+      iconAnchor: [16, 37],
+      popupAnchor: [0, -30],
+    });
+    return marker;
+  }
+
   return (
     <>
       <H1>Your map</H1>
@@ -17,13 +27,12 @@ export default function Map({ locations }) {
             <Marker
               key={location}
               position={[location.latitude, location.longitude]}
+              icon={locationMarker(location.icon)}
             >
               <Popup position={[location.latitude, location.longitude]}>
-                <PopupCard>
-                  <h3>{location.name}</h3>
-                  <p>{location.category}</p>
-                  <p>{location.address}</p>
-                </PopupCard>
+                <h3>{location.name}</h3>
+                <p>{location.category}</p>
+                <p>{location.address}</p>
               </Popup>
             </Marker>
           ))}
@@ -55,7 +64,7 @@ const MapWrapper = styled.div`
   }
 `;
 
-const PopupCard = styled.div`
+/* const PopupCard = styled.div`
   background: linear-gradient(
     to right bottom,
     hsl(105, 55%, 97%),
@@ -63,4 +72,4 @@ const PopupCard = styled.div`
   );
 
   color: var(--border-dark);
-`;
+`; */
