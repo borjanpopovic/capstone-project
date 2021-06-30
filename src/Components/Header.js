@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export default function Header({ isStatic }) {
   return <Headline isStatic={isStatic}>FAV MAP</Headline>;

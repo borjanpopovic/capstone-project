@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import airport from '../assets/map-pins/airport.png';
 import bank from '../assets/map-pins/bank.png';
 import bar from '../assets/map-pins/bar.png';

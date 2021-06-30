@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import formicon from '../assets/form-icon.svg';
 import listicon from '../assets/list-icon.svg';
 import mapicon from '../assets/map-icon.svg';

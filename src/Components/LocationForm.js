@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { useState } from 'react';
+import styled from 'styled-components/macro';
 
 import validateLocation from '../lib/Validation';
 
@@ -18,13 +18,13 @@ export default function LocationForm({ onAddLocations }) {
   const [isError, setIsError] = useState(false);
   const [status, setStatus] = useState(null);
 
-  /* console.log('added location', location); */
+  console.log('added location', location);
 
   function updateLocation(event) {
     const fieldName = event.target.name;
     let fieldValue = event.target.value;
 
-    if (fieldName === 'address' && fieldValue.length >= 5) {
+    if (fieldName === 'address' && fieldValue.length >= 10) {
       lookupLocation(fieldValue);
     }
 
@@ -160,7 +160,7 @@ const Form = styled.form`
     border: none;
     border-radius: 2rem;
     box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 0.1rem;
     padding: 0.1rem 0.4rem;
   }
