@@ -22,26 +22,28 @@ export default function LocationForm({ onAddLocations }) {
     const fieldName = event.target.name;
     let fieldValue = event.target.value;
 
-    if (fieldName === 'address' && fieldValue.length >= 10) {
-      lookupLocation(fieldValue);
-    }
-
     setLocation({ ...location, [fieldName]: fieldValue });
   }
 
-  function lookupLocation(address) {
-    const apiUrl = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`; // URLencode
-    fetch(apiUrl)
-      .then((result) => result.json())
-      .then((data) => {
-        // Rosenheimer 143, München
-        setLocation({
-          ...location,
-          latitude: data[0].lat,
-          longitude: data[0].lon,
-          address: address,
+  function lookupLocation(event) {
+    if (
+      (event.key === 'Enter' || event.type === 'blur') &&
+      location.address.length > 0
+    ) {
+      event.preventDefault();
+      const apiUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURI(
+        location.address
+      )}&format=json`;
+      fetch(apiUrl)
+        .then((result) => result.json())
+        .then((data) => {
+          setLocation({
+            ...location,
+            latitude: data.length > 0 ? data[0].lat : '',
+            longitude: data.length > 0 ? data[0].lon : '',
+          });
         });
-      });
+    }
   }
 
   function handleFormSubmit(event) {
@@ -127,6 +129,8 @@ export default function LocationForm({ onAddLocations }) {
         type="text"
         name="address"
         value={location.address}
+        onKeyDown={lookupLocation}
+        onBlur={lookupLocation}
       />
       <Button>Add to list/map</Button>
     </Form>
