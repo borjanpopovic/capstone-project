@@ -59,6 +59,18 @@ const MapWrapper = styled.div`
     z-index: 0;
   }
 
+  .leaflet-popup-content-wrapper {
+    /*  background: linear-gradient(
+      to right bottom,
+      hsl(105, 55%, 93%),
+      hsl(105, 55%, 100%)
+    ); */
+    background-color: transparent;
+    backdrop-filter: blur(0.2rem);
+
+    color: var(--border-dark);
+  }
+
   .img {
     background: transparent;
   }
@@ -67,7 +79,7 @@ const MapWrapper = styled.div`
 /* const PopupCard = styled.div`
   background: linear-gradient(
     to right bottom,
-    hsl(105, 55%, 97%),
+    hsl(105, 55%, 93%),
     hsl(105, 55%, 100%)
   );
 

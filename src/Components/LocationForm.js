@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
-
 import validateLocation from '../lib/Validation';
-
 import SelectIcons from './SelectIcons';
 export default function LocationForm({ onAddLocations }) {
   const initialLocation = {
