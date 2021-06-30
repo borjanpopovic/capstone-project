@@ -53,7 +53,7 @@ const H1 = styled.h1`
 const MapWrapper = styled.div`
   .leaflet-container {
     bottom: 0;
-    height: 87vh;
+    height: 85vh;
     margin-top: 1rem;
     width: 100%;
     z-index: 0;

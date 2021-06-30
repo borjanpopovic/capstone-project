@@ -45,13 +45,14 @@ const NavBox = styled.div`
   z-index: 1000;
   .active {
     background: var(--secondary);
-    opacity: 0.9;
+    opacity: 0.8;
   }
 `;
 
 const NavLinkStyled = styled(NavLink)`
   background: transparent;
-  box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+  //box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+  box-shadow: 0 0.11rem 0.1rem var(--secondary-dark);
   border-radius: 3rem;
   border: 0.07rem solid var(--secondary-dark);
   color: transparent;
@@ -60,7 +61,7 @@ const NavLinkStyled = styled(NavLink)`
   padding: 0.75rem 0.875rem 0.625rem 0.875rem;
   text-decoration: none;
 
-  img:hover {
+  /*  img:hover {
     background: var(--secondary);
-  }
+  } */
 `;
