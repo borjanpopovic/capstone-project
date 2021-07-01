@@ -52,7 +52,7 @@ export default function LocationForm({ onAddLocations }) {
       setIsError(false);
     } else {
       setIsError(true);
-      setTimeout(() => setIsError(false), 3000);
+      setTimeout(() => setIsError(false), 2000);
     }
   }
 
@@ -163,6 +163,10 @@ const Form = styled.form`
     font-size: 0.9rem;
     margin: 0.1rem;
     padding: 0.1rem 0.4rem;
+
+    &:focus {
+      outline-color: transparent;
+    }
   }
 
   p {
