@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import mapPin from '../lib/icons';
 import airport from '../assets/map-pins/airport.png';
 import bank from '../assets/map-pins/bank.png';
@@ -306,6 +306,8 @@ const SelectWrapper = styled.div`
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap: 0.23rem;
+    row-gap: 0.4rem;
+    width: auto;
   }
 
   .dropdown:hover .dropbtn {

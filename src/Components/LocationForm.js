@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-
+import { useState } from 'react';
+import styled from 'styled-components/macro';
 import validateLocation from '../lib/Validation';
-
 import SelectIcons from './SelectIcons';
 export default function LocationForm({ onAddLocations }) {
   const initialLocation = {
@@ -18,32 +16,32 @@ export default function LocationForm({ onAddLocations }) {
   const [isError, setIsError] = useState(false);
   const [status, setStatus] = useState(null);
 
-  /* console.log('added location', location); */
-
   function updateLocation(event) {
     const fieldName = event.target.name;
     let fieldValue = event.target.value;
 
-    if (fieldName === 'address' && fieldValue.length >= 5) {
-      lookupLocation(fieldValue);
-    }
-
     setLocation({ ...location, [fieldName]: fieldValue });
   }
 
-  function lookupLocation(address) {
-    const apiUrl = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`; // URLencode
-    fetch(apiUrl)
-      .then((result) => result.json())
-      .then((data) => {
-        // Rosenheimer 143, München
-        setLocation({
-          ...location,
-          latitude: data[0].lat,
-          longitude: data[0].lon,
-          address: address,
+  function lookupLocation(event) {
+    if (
+      (event.key === 'Enter' || event.type === 'blur') &&
+      location.address.length > 0
+    ) {
+      event.preventDefault();
+      const apiUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURI(
+        location.address
+      )}&format=json`;
+      fetch(apiUrl)
+        .then((result) => result.json())
+        .then((data) => {
+          setLocation({
+            ...location,
+            latitude: data.length > 0 ? data[0].lat : '',
+            longitude: data.length > 0 ? data[0].lon : '',
+          });
         });
-      });
+    }
   }
 
   function handleFormSubmit(event) {
@@ -129,6 +127,8 @@ export default function LocationForm({ onAddLocations }) {
         type="text"
         name="address"
         value={location.address}
+        onKeyDown={lookupLocation}
+        onBlur={lookupLocation}
       />
       <Button>Add to list/map</Button>
     </Form>
@@ -149,18 +149,18 @@ const Form = styled.form`
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   color: var(--border-dark);
   font-size: 1rem;
-  place-items: center;
   gap: 0.5rem;
-  padding: 1rem;
-  margin-top: 3rem;
   margin: 1rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  place-items: center;
   text-align: center;
 
   input {
     border: none;
     border-radius: 2rem;
     box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 0.1rem;
     padding: 0.1rem 0.4rem;
   }
@@ -180,12 +180,12 @@ const ErrorBox = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 0.6rem;
-  font-size: 0.8rem;
   background-color: var(--secondary);
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+  font-size: 0.8rem;
+  padding: 0.6rem;
 
   :hover {
     background-color: var(--secondary);
