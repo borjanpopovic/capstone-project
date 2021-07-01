@@ -60,7 +60,6 @@ const MapWrapper = styled.div`
   }
 
   .leaflet-popup-content-wrapper {
-    /* background-color: transparent; */
     backdrop-filter: blur(0.2rem);
 
     background: linear-gradient(

@@ -16,8 +16,6 @@ export default function LocationForm({ onAddLocations }) {
   const [isError, setIsError] = useState(false);
   const [status, setStatus] = useState(null);
 
-  console.log('added location', location);
-
   function updateLocation(event) {
     const fieldName = event.target.name;
     let fieldValue = event.target.value;
@@ -152,10 +150,10 @@ const Form = styled.form`
   color: var(--border-dark);
   font-size: 1rem;
   gap: 0.5rem;
-  padding: 1rem;
-  place-items: center;
   margin: 1rem;
   margin-top: 3rem;
+  padding: 1rem;
+  place-items: center;
   text-align: center;
 
   input {

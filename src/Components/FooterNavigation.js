@@ -51,17 +51,12 @@ const NavBox = styled.div`
 
 const NavLinkStyled = styled(NavLink)`
   background: transparent;
-  //box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-  box-shadow: 0 0.11rem 0.1rem var(--secondary-dark);
   border-radius: 3rem;
   border: 0.07rem solid var(--secondary-dark);
+  box-shadow: 0 0.11rem 0.1rem var(--secondary-dark);
   color: transparent;
   display: inline-flex;
   opacity: 0.5;
   padding: 0.75rem 0.875rem 0.625rem 0.875rem;
   text-decoration: none;
-
-  /*  img:hover {
-    background: var(--secondary);
-  } */
 `;
