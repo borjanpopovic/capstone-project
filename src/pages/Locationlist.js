@@ -45,22 +45,21 @@ const SearchInput = styled.input`
   border: none;
   border-radius: 2rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 0.1rem;
   padding: 0.1rem 0.4rem;
 `;
 
 const LocationCards = styled.div`
-  padding: 1rem;
-  margin-top: 0.5rem;
   margin-bottom: 3rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
 `;
 
 const H1 = styled.h1`
+  color: var(--border-dark);
   font-size: 1.25rem;
   margin-top: 4rem;
-
-  color: var(--border-dark);
-  text-align: center;
   padding-top: 1rem;
+  text-align: center;
 `;

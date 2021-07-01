@@ -151,11 +151,11 @@ const Form = styled.form`
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
   color: var(--border-dark);
   font-size: 1rem;
-  place-items: center;
   gap: 0.5rem;
   padding: 1rem;
-  margin-top: 3rem;
+  place-items: center;
   margin: 1rem;
+  margin-top: 3rem;
   text-align: center;
 
   input {
@@ -182,12 +182,12 @@ const ErrorBox = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 0.6rem;
-  font-size: 0.8rem;
   background-color: var(--secondary);
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.75rem hsla(213, 52%, 20%, 0.2);
+  font-size: 0.8rem;
+  padding: 0.6rem;
 
   :hover {
     background-color: var(--secondary);

@@ -307,6 +307,7 @@ const SelectWrapper = styled.div`
     grid-template-rows: repeat(6, 1fr);
     gap: 0.23rem;
     row-gap: 0.4rem;
+    width: auto;
   }
 
   .dropdown:hover .dropbtn {
