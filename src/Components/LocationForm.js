@@ -1,7 +1,18 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 import validateLocation from '../lib/Validation';
 import SelectIcons from './SelectIcons';
+
+LocationForm.propTypes = {
+  name: PropTypes.string,
+  category: PropTypes.string,
+  icon: PropTypes.string,
+  latitude: PropTypes.string,
+  longitude: PropTypes.string,
+  adress: PropTypes.string,
+};
+
 export default function LocationForm({ onAddLocations }) {
   const initialLocation = {
     name: '',
@@ -52,7 +63,7 @@ export default function LocationForm({ onAddLocations }) {
       setIsError(false);
     } else {
       setIsError(true);
-      setTimeout(() => setIsError(false), 2000);
+      setTimeout(() => setIsError(false), 3000);
     }
   }
 

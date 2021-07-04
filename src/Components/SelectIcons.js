@@ -240,28 +240,28 @@ export default function SelectIcons({ location, onSetLocation }) {
             <Img src={tree} alt="tree pin" width="30" height="30" />
           </Button>
           <Button
-            href="#"
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'wc' })}
           >
             <Img src={wc} alt="wc pin" width="30" height="30" />
           </Button>
           <Button
-            href="#"
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'wifi' })}
           >
             <Img src={wifi} alt="wifi pin" width="30" height="30" />
           </Button>
           <Button
-            href="#"
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'yoga' })}
           >
             <Img src={yoga} alt="yoga pin" width="30" height="30" />
           </Button>
           <Button
-            href="#"
+            type="button"
             onClick={() => onSetLocation({ ...location, icon: 'zoo' })}
           >
-            <Img src={zoo} alt="zoo pin" width="25" height="25" />
+            <Img src={zoo} alt="zoo pin" width="30" height="30" />
           </Button>
         </div>
       </div>

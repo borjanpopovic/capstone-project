@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 import airport from '../assets/map-pins/airport.png';
 import bank from '../assets/map-pins/bank.png';
 import bar from '../assets/map-pins/bar.png';
@@ -36,8 +37,10 @@ import wifi from '../assets/map-pins/wifi.png';
 import yoga from '../assets/map-pins/yoga.png';
 import zoo from '../assets/map-pins/zoo.png';
 import trash from '../assets/trash.svg';
-
 import '../App';
+
+LocationCard.propTypes = {};
+
 export default function LocationCard({ location, onRemoveFromList }) {
   function mapPin(location) {
     switch (location.icon) {
