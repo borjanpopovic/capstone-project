@@ -1,6 +1,11 @@
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 import '../App';
 import LocationForm from '../Components/LocationForm';
+
+Form.propTypes = {
+  onAddLocations: PropTypes.func,
+};
 
 export default function Form({ onAddLocations }) {
   return (

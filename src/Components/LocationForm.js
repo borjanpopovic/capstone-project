@@ -11,6 +11,7 @@ LocationForm.propTypes = {
   latitude: PropTypes.string,
   longitude: PropTypes.string,
   adress: PropTypes.string,
+  onAddLocations: PropTypes.func,
 };
 
 export default function LocationForm({ onAddLocations }) {
@@ -162,7 +163,7 @@ const Form = styled.form`
   font-size: 1rem;
   gap: 0.5rem;
   margin: 1rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
   padding: 1rem;
   place-items: center;
   text-align: center;

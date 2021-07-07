@@ -39,7 +39,10 @@ import zoo from '../assets/map-pins/zoo.png';
 import trash from '../assets/trash.svg';
 import '../App';
 
-LocationCard.propTypes = {};
+LocationCard.propTypes = {
+  location: PropTypes.array,
+  onRemoveFromList: PropTypes.func,
+};
 
 export default function LocationCard({ location, onRemoveFromList }) {
   function mapPin(location) {

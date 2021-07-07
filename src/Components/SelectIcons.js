@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 import mapPin from '../lib/icons';
 import airport from '../assets/map-pins/airport.png';
 import bank from '../assets/map-pins/bank.png';
@@ -36,6 +37,11 @@ import wc from '../assets/map-pins/wc.png';
 import wifi from '../assets/map-pins/wifi.png';
 import yoga from '../assets/map-pins/yoga.png';
 import zoo from '../assets/map-pins/zoo.png';
+
+SelectIcons.propTypes = {
+  location: PropTypes.array,
+  onSetLocation: PropTypes.func,
+};
 
 export default function SelectIcons({ location, onSetLocation }) {
   return (

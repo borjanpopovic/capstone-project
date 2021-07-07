@@ -1,7 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 import '../App';
+
+Map.propTypes = {
+  locations: PropTypes.array,
+};
 
 export default function Map({ locations }) {
   function locationMarker(icon) {

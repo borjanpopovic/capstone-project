@@ -1,8 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 import formicon from '../assets/form-icon.svg';
 import listicon from '../assets/list-icon.svg';
 import mapicon from '../assets/map-icon.svg';
+
+FooterNavigation.propTypes = {
+  isStatic: PropTypes.func,
+};
 
 export default function FooterNavigation({ isStatic }) {
   return (

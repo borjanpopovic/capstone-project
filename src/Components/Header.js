@@ -1,4 +1,9 @@
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
+
+Header.propTypes = {
+  isStatic: PropTypes.func,
+};
 
 export default function Header({ isStatic }) {
   return <Headline isStatic={isStatic}>FAV MAP</Headline>;

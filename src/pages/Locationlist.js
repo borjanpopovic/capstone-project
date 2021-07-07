@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 import '../App';
 import LocationCard from '../Components/LocationCard';
+
+Locationlist.propTypes = {
+  locations: PropTypes.array,
+  onRemoveList: PropTypes.func,
+};
 
 export default function Locationlist({ locations, onRemoveFromList }) {
   const [searchTerm, setSearchTerm] = useState('');
