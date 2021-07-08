@@ -12,7 +12,7 @@ With Fav Map you can easily save your favorite places and spots that you have vi
 
 ![Borjan_Popovic_Fav_Map](https://user-images.githubusercontent.com/82392602/124917242-dcd62200-dff3-11eb-81c0-c73cf0744969.gif)
 
-You can find the app on [Vercel](https://capstone-project-drab.vercel.app/)(optimized for iPhone 6/7/8)
+You can find the app [here](https://capstone-project-drab.vercel.app/) on Vecel (optimized for iPhone 6/7/8).
 
 ## Tech Stack
 
